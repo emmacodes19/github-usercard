@@ -43,7 +43,111 @@ axios
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+
+  'tetondan',
+  'dustinmyers',
+  'justsml',
+  'luishrd',
+  'bigknell'
+
+]
+
+
+followersArray.forEach((name) => {
+  axios
+  .get(`https://api.github.com/users/${name}`)
+  .then(response => {
+    const card = document.querySelector('.cards')
+    card.appendChild
+    (gitCards(response.data.avatar_url, response.data.name, response.data.login, response.data.location. response.data.html_url ))
+  })
+
+  .catch(err => console.log(err))
+});
+
+
+axios
+.get('https://api.github.com/users/tetondan')
+.then(response => {
+  console.log(response);
+  const userFollowing = response.data;
+  const card = document.querySelector('.cards');
+  card.appendChild(gitCard(userFollowing))
+})
+
+.catch(error => {
+  console.log('not returned', error)
+});
+
+
+
+axios
+.get('https://api.github.com/users/dustinmyers')
+.then(response => {
+  console.log(response);
+  const userFollowing = response.data;
+  const card = document.querySelector('.cards');
+  card.appendChild(gitCard(userFollowing))
+})
+
+.catch(error => {
+  console.log('not returned', error)
+});
+
+
+
+axios
+.get('https://api.github.com/users/justsml')
+.then(response => {
+  console.log(response);
+  const userFollowing = response.data;
+  const card = document.querySelector('.cards');
+  card.appendChild(gitCard(userFollowing))
+})
+
+.catch(error => {
+  console.log('not returned', error)
+});
+
+
+
+axios
+.get('https://api.github.com/users/luihrd')
+.then(response => {
+  console.log(response);
+  const userFollowing = response.data;
+  const card = document.querySelector('.cards');
+  card.appendChild(gitCard(userFollowing))
+})
+
+.catch(error => {
+  console.log('not returned', error)
+});
+
+
+
+axios
+.get('https://api.github.com/users/bigknell')
+.then(response => {
+  console.log(response);
+  const userFollowing = response.data;
+  const card = document.querySelector('.cards');
+  card.appendChild(gitCard(userFollowing))
+})
+
+.catch(error => {
+  console.log('not returned', error)
+});
+
+
+
+
+
+
+
+
+
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
